@@ -7,6 +7,7 @@ header {
 	top: 0;
 	transition: 0s height linear 0s;
 	transform-origin: center top 1px;
+	backface-visibility: hidden;
 
 	&.shrink{
 		height: 80px;
@@ -18,16 +19,13 @@ header {
 
 		nav{
 			transform: translateY(-35%);
-			backface-visibility: hidden;
 		}
 		.logo{
 			transform: scale(0.5) translateY(-25%);
-			backface-visibility: hidden;
 		}
 
 		&:before{
 			transform: translateY(-25%);
-			backface-visibility: hidden;
 			transition: 0.25s opacity linear 0s,  0s height linear 0.62s,  0s transform linear 0.6s;
 		}
 
@@ -43,9 +41,11 @@ header {
 	}
 	nav, .logo{
 		transition-duration: 0.25s;
+		backface-visibility: hidden;
 	}
 	.background{
 		transition-duration: 0.26s;
+		backface-visibility: hidden;
 	}
 	nav{
 		max-width: 100%;
@@ -207,6 +207,7 @@ header {
 		width: 100%;
 		background: url(../img/header/sub-bg.png) no-repeat center bottom/cover ;
 		transition: 0.25s opacity linear 0s,  0s height linear 2s;
+		backface-visibility: hidden;
 	}
 
 	.logo{
@@ -216,6 +217,6 @@ header {
 		z-index: 3;
 		backface-visibility: hidden;
 		transform-origin: center top 1px;
-
+		z-index: 10;
 	}
 }

@@ -13,6 +13,11 @@ app.partial = {};
 // 網址為 gulp 或者 github 時 設定成debug 模式
 var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
 
+app.title = 'LINE 火炬之光 手遊版';
+app.pageContainer = $('[role=main]');
+app.path = extractUrlValue('path') ? decodeURIComponent(extractUrlValue('path')) : null;
+app.github = /nelson.works/.test(location.href);
+app.rootPath = app.github ? 'http://nelson.works/torchlight/' : 'http://localhost:9000/';
 
 
 $(function(){
@@ -21,13 +26,27 @@ $(function(){
 		init();
     });
 
+	//預載圖片
+    app.imageReload();
 
+	if(typeof console.clear == 'function'){
+		console.clear();
+	}
 
-	//觸發第一次調整頁面尺寸
-
+	$('.board-common article').niceScroll({
+		horizrailenabled:false
+	});
 });
 
 
+function extractUrlValue(key, url)
+{
+	if (typeof url === 'undefined'){
+		url = window.location.href;
+	}
+	var match = url.match('[?&]' + key + '=([^&]+)');
+	return match ? match[1] : null;
+}
 
 
 //判斷是否具有屬性
