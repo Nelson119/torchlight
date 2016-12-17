@@ -1,0 +1,89 @@
+.news{
+	.community{
+		width: 830px;
+		margin: 0 auto;
+		padding: 0;
+		nav{
+			margin-left: -5px;
+			margin-right: -5px;
+			a{
+				padding: 0 3px;
+				position: relative;
+				img{
+					position: relative;
+				}
+			}
+		}
+	}
+	.board{
+		height: 500px;
+		width: 1000px;
+		margin: 10px auto;
+		position: relative;
+
+		.background{
+			background-repeat: no-repeat;
+			background-position: 6px top;
+			background-size: 995px 500px;
+		}
+
+		.tvc-container{
+			position: relative;
+			.tvc{
+				@include Item(430, 264, 50, 'auto', 'auto', 0, 430, 'fit', 'absolute');
+			}
+		}
+	}
+	.board-content{
+		width: 856px;
+		margin: 70px auto 105px;
+		.list{
+			height: 255px;
+			overflow: hidden;
+		}
+		ul{
+			.summary{
+				width: 260px;
+				padding-left: 0.5em;
+			}
+
+			.cat{
+				color: #fff;
+				padding: 0 0.2em 0 0.7em;
+				letter-spacing: 0.5em;
+				text-align: center;
+				line-height: 1.4;
+				border-radius: 5px;
+
+				&.cat1{
+					background-color: #593c24;
+				}
+
+				&.cat2{
+					background-color: #a30007;
+				}
+			}
+
+			h3{
+				display: inline-block;
+				margin: 0;
+				line-height: 1.4em;
+				letter-spacing: 0.2em;
+			}
+			li{
+				position: relative;
+				&:after{
+					display: block;
+					content: '';
+					height: 15px;
+					background: url(../img/news/hr.png) left center repeat-x;
+				}
+			}
+
+			.date{
+				vertical-align: bottom;
+			}
+		}
+	}
+
+}
