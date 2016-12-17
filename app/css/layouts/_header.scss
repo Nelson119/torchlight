@@ -1,5 +1,100 @@
 header {
-}
+	height: 158px;
+	position: fixed!important;
+	z-index: 10!important;
+	overflow: hidden;
+	width: 100%;
+	top: 0;
 
-body.overlay{
+	nav{
+		max-width: 100%;
+		height: 105px;
+		width: 100%;
+		margin-top: 10px;
+		z-index: 10;
+		>a,>aside{
+			position: absolute;
+			display: block;
+			margin-top: 40px;
+
+			&:nth-child(1),&:nth-child(2),&:nth-child(3){
+				left: 50%;
+			}
+			&:nth-child(4),&:nth-child(5),&:nth-child(6){
+				right: 50%;
+			}
+			&:nth-child(1){
+				margin-left: -500px;
+			}
+			&:nth-child(2){
+				margin-left: -375px;
+			}
+			&:nth-child(3){
+				margin-left: -245px;
+			}
+			&:nth-child(4){
+				margin-right: -500px;
+			}
+			&:nth-child(5){
+				margin-right: -375px;
+			}
+			&:nth-child(6){
+				margin-right: -245px;
+			}
+			@media screen and (min-width: #{$screen-md-num + 80}px) {
+				&:nth-child(1){
+					margin-left: -525px;
+				}
+				&:nth-child(2){
+					margin-left: -395px;
+				}
+				&:nth-child(3){
+					margin-left: -265px;
+				}
+				&:nth-child(4){
+					margin-right: -525px;
+				}
+				&:nth-child(5){
+					margin-right: -395px;
+				}
+				&:nth-child(6){
+					margin-right: -265px;
+				}
+			}
+		}
+		a{
+			&:after{
+				content: '';
+				opacity: 0;
+				background: url(../img/header/nav-active.png) no-repeat;
+				display: block;
+				@include Item(138, 24, 'auto', 'auto', -23, -20, 93, 'fit', 'absolute');
+				transition: opacity 0.25s linear 0s; 
+			}
+			&:active, &:hover, &.active{
+				&:after{
+					opacity: 1;
+
+				}
+			}
+		}
+
+
+		&.nav-show-sub{
+			&:before{
+				content: '';
+				position: absolute;
+				height: 195px;
+				width: 100%;
+				background: url(../img/header/sub-bg.png) no-repeat center bottom/cover ;
+			}
+		}
+	}
+
+	.logo{
+		@include Item(453, 139, 20, 'auto', 'auto', 0, 0, 'none', 'absolute');
+		left: 50%;
+		margin-left: -226.5px;
+		z-index: 3;
+	}
 }

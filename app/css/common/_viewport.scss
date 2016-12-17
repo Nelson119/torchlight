@@ -1,0 +1,17 @@
+body.news{
+	.content{
+		top: 0;
+		margin-top: per(785, 1920);
+	}
+}
+@media screen and (min-width: $screen-sm) {
+	body{
+		padding-top: 1px;
+		margin-top: -1px;
+		min-width: $screen-md;
+		width: 100%;
+		>.background, >header, >.content{
+			min-width: $screen-md;
+		}
+	}
+}
