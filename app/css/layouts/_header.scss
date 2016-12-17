@@ -145,6 +145,11 @@ header {
 				li{
 					list-style: none;
 					transition: 0.45s margin linear 0s;
+					a:hover{
+						img{
+							filter: drop-shadow(0 0 3px rgba(255,255,255,0.5));
+						}
+					}
 				}
 				padding: 0;
 				width: 120px;
