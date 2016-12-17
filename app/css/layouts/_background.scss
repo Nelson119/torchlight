@@ -4,9 +4,9 @@
 	position: absolute;
 
 	.butt{
-		@include Item(1920, 897, 'auto', 0, 0, 'auto', 1920, 'fit', 'absolute');
+		@include Item(1920, 897, 'auto', 0, 0, 'auto', 1920, 'none', 'absolute');
 		background: center top;
-		background: center bottom/ 100% auto;
+		background: center bottom/ 1920px auto;
 	}
 	.kv{
 		@include Item(1920, 930, 0, 'auto', 'auto', 0, 1920, 'fit', 'absolute');
