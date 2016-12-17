@@ -75,6 +75,7 @@ body{
 			height: 650px;
 			overflow: hidden;
 			margin: 0 auto 0.5em;
+        	-webkit-overflow-scrolling: touch;
 		}
 	}
 }
