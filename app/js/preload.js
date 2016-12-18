@@ -105,6 +105,9 @@ app.partial.preload = function(){
 						app.dementions.desktop = true;
 					});
 				}
+				if( $('html.ios').length && window.innerHeight ){
+					$('html, body').height(window.innerHeight);
+				}
 			}).trigger('resize');
 		}
 	};

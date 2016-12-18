@@ -44,18 +44,65 @@ body{
 			}
 		}
 		@media screen and (max-width: #{$screen-xs - 1}) {
-			@include Item(640, 0, 12, 'auto', 'auto', 0, 640, 'fit', 'fixed');
+			@include Item(640, 0, 0, 'auto', 'auto', 0, 640, 'fit', 'fixed');
 			z-index: 15;
 			img{
 				position: absolute!important;
 			}
+			h3, a{
+				height: 0;
+				padding-top: 0;
+				margin-top: 0;
+				margin-bottom: 0;
+				opacity: 0;
+				overflow: hidden;
+				position: relative;
+			}
 			a:nth-child(3){
-				position: fixed;
-				@include Item(57, 57, 0, 5, 'auto', 'auto', 640, 'fit', 'absolute');
+				@include Item(57, 57, 12, 5, 'auto', 'auto', 640, 'fit', 'fixed');
+				opacity: 1;
 			}
 			a:nth-child(4){
+				@include Item(57, 57, 12, 68, 'auto', 'auto', 640, 'fit', 'fixed');
+				opacity: 1;
+			}
+			a.close{
+				opacity: 0;
+			}
+			&.fadein{
+				@include SubItem();
 				position: fixed;
-				@include Item(57, 57, 0, 68, 'auto', 'auto', 640, 'fit', 'absolute');
+				margin: 0;
+				img{
+					position: absolute;
+				}
+
+				.container{
+					@include Item(454, 327, 327/-2, 'auto', 'auto', 93, 640, 'fit', 'absolute');
+					top: 50%;
+					background: rgba(0,0,0,0.6);
+					a:nth-child(1){
+						@include Item(204, 72, 87, 'auto', 'auto', 127, 454, 'fit', 'absolute');
+					}
+					a:nth-child(2){
+						@include Item(204, 72, 198, 'auto', 'auto', 127, 454, 'fit', 'absolute');
+					}
+					a.close{
+						@include Item(33, 29, 16, 'auto', 'auto', 402, 454, 'fit', 'absolute');
+					}
+					a{
+						opacity: 1;
+					}
+				}
+
+				h3{
+					@include Item(222, 45, 26, 'auto', 'auto', 121, 454, 'fit', 'absolute');
+					opacity: 1;
+				}
+
+				.dismiss{
+					@include SubItem();
+				}
 			}
 		}
 	}
