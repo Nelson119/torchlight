@@ -95,7 +95,7 @@ app.partial.preload = function(){
 
 	app.imageReload = {
 		init: function(){
-			$(window).on('resize', function(){
+			$(window).on('resize scroll', function(){
 				if($('img[data-src]:visible, figure[data-src]:visible').not('[src],[style]').length && $(window).width() <=768){
 					imageReload(function(){
 						app.dementions.mobile = true;
