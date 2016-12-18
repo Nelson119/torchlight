@@ -100,10 +100,13 @@
 
       
     <!-- app 按鈕 -->
-    <aside class="app content">
+    <aside class="app content fadein">
       <a class="visible-xs dismiss" href="javascript:$('.app.content').removeClass('fadein');void(0)"></a>
       <section class="container community">
-        <nav class="row">
+        <h3 class="visible-xs">
+          <img class="subimg-w" data-src="img/lightbox/game-download-title@640.png">
+        </h3>
+        <nav class="row fadein">
           <a href="javascript:" class="col-sm-3"><img class="subimg-w" data-src="img/app/nav-1.png"></a>
           <a href="javascript:" class="col-sm-3"><img class="subimg-w" data-src="img/app/nav-2.png"></a>
           <a href="javascript:" class="col-sm-3">
@@ -115,11 +118,8 @@
             <img class="subimg-w visible-xs" data-src="img/app/nav-4@640.png">
           </a>
         </nav>
-        <h3 class="visible-xs">
-          <img class="subimg-w" src="game-download-title@640.png">
-        </h3>
-        <a class="visible-xs" href="javascript:$('.app.content').removeClass('fadein');void(0)" class="close visible-xs">
-          <img class="subimg-w" data-src="img/app/nav-4@640.png">
+        <a class="visible-xs close" href="javascript:$('.app.content').removeClass('fadein');void(0)" class="close visible-xs">
+          <img class="subimg-w" data-src="img/lightbox/close@640.png">
         </a>
       </section>
     </aside>
