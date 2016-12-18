@@ -23,6 +23,15 @@ footer {
 			width: 80px;
 			height: 80px;
 			margin-right: 20px;
+			@media screen and (min-width: $screen-sm) {
+				&.f12{
+					width: 58px;
+					height: 61px;
+					background-repeat: no-repeat;
+					background-position: 0 top;
+					background-size: 100% 100%;
+				}
+			}
 			@media screen and (max-width: #{$screen-xs - 1}) {
 				@include Item(120, 120, 0, 5, 'auto', 5, 630, 'fit', 'relative');
 			}
