@@ -1,42 +1,88 @@
 header {
 	height: 158px;
 	position: fixed!important;
-	z-index: 10!important;
+	z-index: 15!important;
 	overflow: hidden;
 	width: 100%;
 	top: 0;
 	transition: 0s height linear 0s;
 	transform-origin: center top 1px;
 	backface-visibility: hidden;
-
-	&.shrink{
-		height: 80px;
-		transition: 0s height linear 0s;
+	@media screen and (max-width: #{$screen-xs - 1}) {
+		@include Item(640, 80, 0, 'auto', 'auto', 0, 640, 'fit', 'absolute');
+		overflow: visible;
+		background: #150f07;
 		.background{
-			transform: scaleY(0.5) translateY(-50%);
-			backface-visibility: hidden;
+			display: none;
 		}
+	}
 
-		nav{
-			transform: translateY(-35%);
-		}
-		.logo{
-			transform: scale(0.5) translateY(-25%);
-		}
+	@media screen and (min-width: $screen-sm) {
+		&.shrink{
 
-		&:before{
-			transform: translateY(-25%);
-			transition: 0.25s opacity linear 0s,  0s height linear 0.62s,  0s transform linear 0.6s;
-		}
-
-		.group ul{
-			transform: translateY(-15%);
-		}
-		&.nav-show-sub {
-			height: 255px;
-			.group ul{
-				transform: translateY(-10%);
+			height: 80px;
+			transition: 0s height linear 0s;
+			.background{
+				transform: scaleY(0.5) translateY(-50%);
+				backface-visibility: hidden;
 			}
+
+			nav{
+				transform: translateY(-35%);
+			}
+			.logo{
+				transform: scale(0.5) translateY(-25%);
+			}
+
+			&:before{
+				transform: translateY(-25%);
+				transition: 0.25s opacity linear 0s,  0s height linear 0.62s,  0s transform linear 0.6s;
+			}
+
+			.group ul{
+				transform: translateY(-15%);
+			}
+			&.nav-show-sub {
+				height: 255px;
+				.group ul{
+					transform: translateY(-10%);
+				}
+			}
+		}
+		&.nav-show-sub{
+			height: 300px;
+			transition: 0s height linear 0s;
+			&:before{
+				top: 110px;
+				opacity: 1;
+				height: 195px;
+				transition: 0.25s opacity linear 0s,  0s height linear 0s;
+			}
+			.group{
+				ul{
+					transform-origin: center top 1px;
+					padding: 40px 0 0;
+					transform: none;
+					opacity: 1;
+					height: 195px;
+					transition: 0.6s opacity linear 0s, 0.6s transform linear 0s,  0s height linear 0s,  0s padding linear 0s;
+					li{
+						&+li{
+							margin-top: 0.5em;
+						}
+					}
+				}
+			}
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			height: 0;
+			opacity: 0;
+			width: 100%;
+			background: url(../img/header/sub-bg.png) no-repeat center bottom/cover ;
+			transition: 0.25s opacity linear 0s,  0s height linear 2s;
+			backface-visibility: hidden;
 		}
 	}
 	nav, .logo{
@@ -53,36 +99,13 @@ header {
 		width: 100%;
 		margin-top: 10px;
 		z-index: 10;
+		@media screen and (max-width: #{$screen-xs - 1}) {
+			@include Item(640, 0, 'auto', 'auto', 128, 0, 640, 'fit', 'fixed');
+			position: fixed!important;
+			bottom: 0;
+			letter-spacing: -1em;
+		}
 		>a,>aside{
-			position: absolute;
-			display: block;
-			margin-top: 40px;
-			z-index: 1;
-
-			&:nth-child(1),&:nth-child(2),&:nth-child(3){
-				left: 50%;
-			}
-			&:nth-child(4),&:nth-child(5),&:nth-child(6){
-				right: 50%;
-			}
-			&:nth-child(1){
-				margin-left: -500px;
-			}
-			&:nth-child(2){
-				margin-left: -375px;
-			}
-			&:nth-child(3){
-				margin-left: -245px;
-			}
-			&:nth-child(4){
-				margin-right: -245px;
-			}
-			&:nth-child(5){
-				margin-right: -375px;
-			}
-			&:nth-child(6){
-				margin-right: -500px;
-			}
 			@media screen and (min-width: #{$screen-md-num + 80}px) {
 				&:nth-child(1){
 					margin-left: -525px;
@@ -103,31 +126,85 @@ header {
 					margin-right: -525px;
 				}
 			}
+			@media screen and (min-width: $screen-sm) {
+				position: absolute;
+				display: block;
+				margin-top: 40px;
+				z-index: 1;
+				&:nth-child(1),&:nth-child(2),&:nth-child(3){
+					left: 50%;
+				}
+				&:nth-child(4),&:nth-child(5),&:nth-child(6){
+					right: 50%;
+				}
+				&:nth-child(1){
+					margin-left: -500px;
+				}
+				&:nth-child(2){
+					margin-left: -375px;
+				}
+				&:nth-child(3){
+					margin-left: -245px;
+				}
+				&:nth-child(4){
+					margin-right: -245px;
+				}
+				&:nth-child(5){
+					margin-right: -375px;
+				}
+				&:nth-child(6){
+					margin-right: -500px;
+				}
+			}
+
 		}
 		>a,>aside >a{
-			z-index: 10;
-			&:after{
-				content: '';
-				opacity: 0;
-				background: url(../img/header/nav-active.png) no-repeat;
-				display: block;
-				@include Item(138, 24, 0, 'auto', 'auto', -23, 93, 'fit', 'absolute');
-				transition: opacity 0.25s linear 0s; 
-				position: relative;
-				z-index: 1;
-			}
-			&:active, &:hover, &.active{
+			@media screen and (min-width: $screen-sm) {
+				z-index: 10;
 				&:after{
-					opacity: 1;
+					content: '';
+					opacity: 0;
+					background: url(../img/header/nav-active.png) no-repeat;
+					display: block;
+					@include Item(138, 24, 0, 'auto', 'auto', -23, 93, 'fit', 'absolute');
+					transition: opacity 0.25s linear 0s; 
+					position: relative;
+					z-index: 1;
+				}
+				&:active, &:hover, &.active{
+					&:after{
+						opacity: 1;
 
+					}
+				}
+			}
+		}
+		>a{
+			@media screen and (max-width: #{$screen-xs - 1}) {
+				@include Item(640/5, 128, 0, 'auto', 'auto', 'auto', 640, 'fit', 'relative');
+				display: inline-block;
+				img{
+					@include SubItem();
 				}
 			}
 		}
 		>aside{
-			&:active, &:hover, &.active{
-				a:after{
-					opacity: 1;
+			@media screen and (min-width: $screen-sm) {
+				&:active, &:hover, &.active{
+					a:after{
+						opacity: 1;
 
+					}
+				}
+			}
+			@media screen and (max-width: #{$screen-xs - 1}) {
+				@include Item(640/5, 128, 0, 'auto', 'auto', 'auto', 640, 'fit', 'relative');
+				display: inline-block;
+				>a{
+					@include SubItem();
+					img{
+						@include SubItem();
+					}
 				}
 			}
 		}
@@ -140,25 +217,35 @@ header {
 		// 	}
 		// }
 
-		.group{
-			ul{
-				li{
-					list-style: none;
-					transition: 0.45s margin linear 0s;
-					a:hover{
-						img{
-							filter: drop-shadow(0 0 3px rgba(255,255,255,0.5));
+		@media screen and (min-width: $screen-sm) {
+			.group{
+				ul{
+					li{
+						list-style: none;
+						transition: 0.45s margin linear 0s;
+						a:hover{
+							img{
+								filter: drop-shadow(0 0 3px rgba(255,255,255,0.5));
+							}
 						}
 					}
+					padding: 0;
+					width: 120px;
+					margin: #{(92-120)/2}px;
+					transform-origin: center top 1px;
+					transform: translateY(-5%);
+					opacity: 0;
+					height: 0;
+					transition: 0.6s opacity linear 0s, 0.6s transform linear 0s,  0s height linear 0.62s,  0s padding linear 0.62s;
 				}
-				padding: 0;
-				width: 120px;
-				margin: #{(92-120)/2}px;
-				transform-origin: center top 1px;
-				transform: translateY(-5%);
-				opacity: 0;
-				height: 0;
-				transition: 0.6s opacity linear 0s, 0.6s transform linear 0s,  0s height linear 0.62s,  0s padding linear 0.62s;
+			}
+		}
+		@media screen and (max-width: #{$screen-xs - 1}) {
+			display: inline-block;
+			.group{
+				ul{
+					display: none;
+				}
 			}
 		}
 
@@ -174,41 +261,6 @@ header {
 		}
 	}
 
-	&.nav-show-sub{
-		height: 300px;
-		transition: 0s height linear 0s;
-		&:before{
-			top: 110px;
-			opacity: 1;
-			height: 195px;
-			transition: 0.25s opacity linear 0s,  0s height linear 0s;
-		}
-		.group{
-			ul{
-				transform-origin: center top 1px;
-				padding: 40px 0 0;
-				transform: none;
-				opacity: 1;
-				height: 195px;
-				transition: 0.6s opacity linear 0s, 0.6s transform linear 0s,  0s height linear 0s,  0s padding linear 0s;
-				li{
-					&+li{
-						margin-top: 0.5em;
-					}
-				}
-			}
-		}
-	}
-	&:before{
-		content: '';
-		position: absolute;
-		height: 0;
-		opacity: 0;
-		width: 100%;
-		background: url(../img/header/sub-bg.png) no-repeat center bottom/cover ;
-		transition: 0.25s opacity linear 0s,  0s height linear 2s;
-		backface-visibility: hidden;
-	}
 
 	.logo{
 		@include Item(453, 139, 20, 'auto', 'auto', 0, 0, 'none', 'absolute');
@@ -218,5 +270,19 @@ header {
 		backface-visibility: hidden;
 		transform-origin: center top 1px;
 		z-index: 10;
+		@media screen and (max-width: #{$screen-xs - 1}) {
+			@include Item(230, 70, 5, 'auto', 'auto', 5, 640, 'fit', 'absolute');
+			a{
+				@include SubItem();
+			}
+		}
+		.line{			
+			@include Item(70, 70, 0, 'auto', 'auto', 0, 230, 'fit', 'absolute');
+			background: no-repeat center/cover;
+		}
+		.tagline{
+			@include Item(147, 39, 19, 'auto', 'auto', 84, 230, 'fit', 'absolute');
+			background: no-repeat center/cover;
+		}
 	}
 }

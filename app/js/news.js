@@ -5,10 +5,11 @@
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
 /*global app, $ */
-app.partial.share = function(){
+app.partial.news = function(){
 
-	$('.news .board-content .list').niceScroll({
-		horizrailenabled:false
-	});
-
+	if(!$('html.mobile,html.tablet').length){
+		$('.news .board-content .list').niceScroll({
+			horizrailenabled:false
+		});
+	}
 };

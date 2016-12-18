@@ -27,15 +27,14 @@ $(function(){
     });
 
 	//預載圖片
-    app.imageReload();
+    app.imageReload.init();
 
-	if(typeof console.clear == 'function'){
-		console.clear();
+
+	if(!$('html.mobile,html.tablet').length){
+		$('.board-common article').niceScroll({
+			horizrailenabled:false
+		});
 	}
-
-	$('.board-common article').niceScroll({
-		horizrailenabled:false
-	});
 });
 
 

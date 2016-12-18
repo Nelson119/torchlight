@@ -111,7 +111,7 @@
 	margin: 0;
 	width: $width;
 	height: 0;
-	position: absolute;
+	position: #{$pos};
 	padding-top: $height;
 
 	@if($left == 'auto') {

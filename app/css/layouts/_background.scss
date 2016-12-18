@@ -12,18 +12,30 @@
 		@include Item(1920, 930, 0, 'auto', 'auto', 0, 1920, 'fit', 'absolute');
 		background: center top;
 		background: center top/ 100% auto;
+		@media screen and (max-width: #{$screen-xs - 1}) {
+			@include Item(640, 316, 0, 'auto', 'auto', 0, 640, 'fit', 'absolute');
+		}
 	}
 	.nav{
 		@include Item(1920, 158, 0, 'auto', 'auto', 0, 1920, 'fit', 'absolute');
 
-		@media screen and (min-width: #{$screen-xs-num}px) {
+		@media screen and (min-width: $screen-xs) {
 			height: 158px;
 		}
 		background: center top no-repeat;
+	}
+	.frame{
+		@media screen and (max-width: #{$screen-xs - 1}) {
+			@include Item(640, 350, -13, 'auto', 'auto', 0, 640, 'fit', 'absolute');
+			background: center/100% auto no-repeat;
+		}
 	}
 
 	&~*{
 		position: relative;
 		z-index: 3;
+	}
+	@media screen and (max-width: #{$screen-xs - 1}) {
+		@include Item(640, 316, 80, 'auto', 'auto', 0, 640, 'fit', 'relative');
 	}
 }

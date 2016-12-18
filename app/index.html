@@ -37,8 +37,12 @@
 
     <!-- 視覺背景 -->
     <figure class="background">
-      <figure class="butt" data-src="img/background/butt.jpg"></figure>
-      <figure class="kv" data-src="img/background/kv-1.png"></figure>
+      <figure class="butt hidden-xs" data-src="img/background/butt.jpg"></figure>
+      <figure class="kv hidden-xs" data-src="img/background/kv-1.png"></figure>
+      <figure class="kv visible-xs" data-src="img/background/kv-1@640.png"></figure>
+      <!-- 手機版框-->
+      <figure class="frame visible-xs" data-src="img/background/frame@640.png"></figure>
+      <!-- ./手機版框-->
     </figure>
     <!-- ./視覺背景 -->
 
@@ -47,31 +51,32 @@
     <header>
 
       <!-- 主選單背景 -->
-      <figure class="background">
+      <figure class="background hidden-xs">
         <figure class="nav" data-src="img/header/nav-bg.png"></figure>
       </figure>
       <!-- ./主選單背景 -->
 
       <h1 class="logo">
-        <a href="./">
-          <img class="subimg-h" data-src="img/header/logo.png">
+        <img class="subimg-h hidden-xs" data-src="img/header/logo.png">
+        <a class="hidden-xs" href="./"></a>
+        <a class="visible-xs" href="./">
+          <figure class="line" data-src="img/footer/line.png"></figure>
+          <figure class="tagline" data-src="img/header/tagline@640.png"></figure>
         </a>
       </h1>
-      <!-- <a href="javascript:" class="burger visible-xs visible-sm"> 
-        <i class="fa fa-bars"></i>
-      </a> -->
+
       <!-- 主選單 -->
       <nav>
-        <a class="active" href="javascript:"><img data-src="img/header/nav-1.png"></a>
-        <a href="javascript:"><img data-src="img/header/nav-2.png"></a>
+        <a class="active" href="javascript:"><img class="hidden-xs" data-src="img/header/nav-1.png"><img class="visible-xs" data-src="img/header/nav-1@640.png"></a>
+        <a href="javascript:"><img class="hidden-xs" data-src="img/header/nav-2.png"><img class="visible-xs" data-src="img/header/nav-2@640.png"></a>
         <aside class="group">
-          <a href="javascript:"><img data-src="img/header/nav-3.png"></a>
+          <a href="javascript:"><img class="hidden-xs" data-src="img/header/nav-3.png"><img class="visible-xs" data-src="img/header/nav-3@640.png"></a>
           <ul class="text-center">
             <li><a href="guide.html"><img data-src="img/header/nav-3-1.png"></a></li>
           </ul>
         </aside>
         <aside class="group">
-          <a href="javascript:"><img data-src="img/header/nav-4.png"></a>
+          <a href="javascript:"><img class="hidden-xs" data-src="img/header/nav-4.png"><img class="visible-xs" data-src="img/header/nav-4@640.png"></a>
           <ul class="text-center">
             <li><a href="javascript:"><img data-src="img/header/nav-4-1.png"></a></li>
             <li><a href="javascript:"><img data-src="img/header/nav-4-2.png"></a></li>
@@ -81,15 +86,13 @@
           </ul>
         </aside>
         <aside class="group">
-          <a href="javascript:"><img data-src="img/header/nav-5.png"></a>
+          <a href="javascript:"><img class="hidden-xs" data-src="img/header/nav-5.png"><img class="visible-xs" data-src="img/header/nav-5@640.png"></a>
           <ul class="text-center">
             <li><a href="javascript:"><img data-src="img/header/nav-5-1.png"></a></li>
             <li><a href="javascript:"><img data-src="img/header/nav-5-2.png"></a></li>
           </ul>
         </aside>
-        <aside class="group">
-          <a href="javascript:"><img data-src="img/header/nav-6.png"></a>
-        </aside>
+        <a class="hidden-xs" href="javascript:"><img data-src="img/header/nav-6.png"></a>
       </nav>
       <!-- ./主選單 -->
     </header>
@@ -100,10 +103,16 @@
     <aside class="app content">
       <section class="container community">
         <nav class="row">
-          <a href="javascript:" class="col-xs-3"><img class="subimg-w" data-src="img/app/nav-1.png"></a>
-          <a href="javascript:" class="col-xs-3"><img class="subimg-w" data-src="img/app/nav-2.png"></a>
-          <a href="javascript:" class="col-xs-3"><img class="subimg-w" data-src="img/app/nav-3.png"></a>
-          <a href="javascript:" class="col-xs-3"><img class="subimg-w" data-src="img/app/nav-4.png"></a>
+          <a href="javascript:" class="col-sm-3"><img class="subimg-w hidden-xs" data-src="img/app/nav-1.png"></a>
+          <a href="javascript:" class="col-sm-3"><img class="subimg-w hidden-xs" data-src="img/app/nav-2.png"></a>
+          <a href="javascript:" class="col-sm-3">
+            <img class="subimg-w hidden-xs" data-src="img/app/nav-3.png">
+            <img class="subimg-w visible-xs" data-src="img/app/nav-3@640.png">
+          </a>
+          <a href="javascript:" class="col-sm-3">
+            <img class="subimg-w hidden-xs" data-src="img/app/nav-4.png">
+            <img class="subimg-w visible-xs" data-src="img/app/nav-4@640.png">
+          </a>
         </nav>
       </section>
     </aside>
@@ -116,73 +125,79 @@
       <aside class="content news-content">
         <!-- 最新消息 -->
         <section class="container board">
-          <figure class="background" data-src="img/news/board.png"></figure>
+          <figure class="background hidden-xs" data-src="img/news/board.png"></figure>
+          <figure class="background visible-xs" data-src="img/page/board@640.png">
+            <figure class="standar" data-src="img/header/logo.png"></figure>            
+          </figure>
           <aside class="board-content">
             <aside class="row">
-              <aside class="col-xs-6">
-                <h2><img data-src="img/news/board-title.png"></h2>
+              <aside class="col-sm-6">
+                <h2>
+                  <img class="hidden-xs" data-src="img/news/board-title.png">
+                  <img class="subimg-w visible-xs" data-src="img/news/board-title@640.png">
+                </h2>
                 <aside class="list">
                   <ul>
                     <li class="vertical-middle">
-                      <span class="cat cat1 fontsize-18">活動</span>
+                      <span class="cat cat1 fontsize-18 fontsize-sm-36">活動</span>
                       <aside class="summary">
-                        <h3 class="fontsize-18">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
+                        <h3 class="fontsize-18 fontsize-sm-36">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
                       </aside>
-                      <span class="fontsize-11 date">2016.00.00</span>
+                      <span class="fontsize-11 fontsize-sm-28 date">2016.00.00</span>
                     </li>
                     <li class="vertical-middle">
-                      <span class="cat cat2 fontsize-18">公告</span>
+                      <span class="cat cat2 fontsize-18 fontsize-sm-36">公告</span>
                       <aside class="summary">
-                        <h3 class="fontsize-18">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
+                        <h3 class="fontsize-18 fontsize-sm-36">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
                       </aside>
-                      <span class="fontsize-11 date">2016.00.00</span>
+                      <span class="fontsize-11 fontsize-sm-28 date">2016.00.00</span>
                     </li>
                     <li class="vertical-middle">
-                      <span class="cat cat1 fontsize-18">活動</span>
+                      <span class="cat cat1 fontsize-18 fontsize-sm-36">活動</span>
                       <aside class="summary">
-                        <h3 class="fontsize-18">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
+                        <h3 class="fontsize-18 fontsize-sm-36">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
                       </aside>
-                      <span class="fontsize-11 date">2016.00.00</span>
+                      <span class="fontsize-11 fontsize-sm-28 date">2016.00.00</span>
                     </li>
                     <li class="vertical-middle">
-                      <span class="cat cat2 fontsize-18">公告</span>
+                      <span class="cat cat2 fontsize-18 fontsize-sm-36">公告</span>
                       <aside class="summary">
-                        <h3 class="fontsize-18">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
+                        <h3 class="fontsize-18 fontsize-sm-36">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
                       </aside>
-                      <span class="fontsize-11 date">2016.00.00</span>
+                      <span class="fontsize-11 fontsize-sm-28 date">2016.00.00</span>
                     </li>
                     <li class="vertical-middle">
-                      <span class="cat cat1 fontsize-18">活動</span>
+                      <span class="cat cat1 fontsize-18 fontsize-sm-36">活動</span>
                       <aside class="summary">
-                        <h3 class="fontsize-18">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
+                        <h3 class="fontsize-18 fontsize-sm-36">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
                       </aside>
-                      <span class="fontsize-11 date">2016.00.00</span>
+                      <span class="fontsize-11 fontsize-sm-28 date">2016.00.00</span>
                     </li>
                     <li class="vertical-middle">
-                      <span class="cat cat2 fontsize-18">公告</span>
+                      <span class="cat cat2 fontsize-18 fontsize-sm-36">公告</span>
                       <aside class="summary">
-                        <h3 class="fontsize-18">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
+                        <h3 class="fontsize-18 fontsize-sm-36">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
                       </aside>
-                      <span class="fontsize-11 date">2016.00.00</span>
+                      <span class="fontsize-11 fontsize-sm-28 date">2016.00.00</span>
                     </li>
                     <li class="vertical-middle">
-                      <span class="cat cat1 fontsize-18">活動</span>
+                      <span class="cat cat1 fontsize-18 fontsize-sm-36">活動</span>
                       <aside class="summary">
-                        <h3 class="fontsize-18">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
+                        <h3 class="fontsize-18 fontsize-sm-36">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
                       </aside>
-                      <span class="fontsize-11 date">2016.00.00</span>
+                      <span class="fontsize-11 fontsize-sm-28 date">2016.00.00</span>
                     </li>
                     <li class="vertical-middle">
-                      <span class="cat cat2 fontsize-18">公告</span>
+                      <span class="cat cat2 fontsize-18 fontsize-sm-36">公告</span>
                       <aside class="summary">
-                        <h3 class="fontsize-18">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
+                        <h3 class="fontsize-18 fontsize-sm-36">活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題活動標題</h3> 
                       </aside>
-                      <span class="fontsize-11 date">2016.00.00</span>
+                      <span class="fontsize-11 fontsize-sm-28 date">2016.00.00</span>
                     </li>
                   </ul>
                 </aside>
               </aside>
-              <aside class="col-xs-6">
+              <aside class="col-sm-6 hidden-xs">
                 <aside class="tvc-container">
                   <aside class="tvc">
                     <iframe class="subitem" src="//www.youtube.com/embed/JafiJFfoNr4" frameborder="0" allowfullscreen></iframe>
@@ -195,7 +210,7 @@
         <!-- ./最新消息 -->
 
         <!-- banner -->
-        <section class="container banner">
+        <section class="container banner hidden-xs">
           <aside class="row">
 
 

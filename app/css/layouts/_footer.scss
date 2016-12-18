@@ -1,4 +1,7 @@
 footer {
+	@media screen and (max-width: #{$screen-xs - 1}) {
+		display: none;
+	}
 	height: 120px;
 	.inner{
 		width: 960px;

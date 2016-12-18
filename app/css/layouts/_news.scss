@@ -25,6 +25,18 @@
 			background-repeat: no-repeat;
 			background-position: 6px top;
 			background-size: 995px 500px;
+			@media screen and (max-width: #{$screen-xs - 1}) {
+				@include Item(640, 0, 0, 'auto', 'auto', 0, 640, 'fit', 'absolute');
+				background-repeat: no-repeat;
+				background-position: 0 top;
+				background-size: 100% 100%;
+				height: 100%;
+			}
+			.standar{
+				@include Item(352, 113, -50, 'auto', 'auto', 145, 640, 'fit', 'absolute');
+				background: no-repeat center/cover;	
+				z-index: 10
+			}
 		}
 
 		.tvc-container{
@@ -33,19 +45,43 @@
 				@include Item(430, 264, 50, 'auto', 'auto', 0, 430, 'fit', 'absolute');
 			}
 		}
+		@media screen and (max-width: #{$screen-xs - 1}) {
+			@include Item(640, 0, 0, 'auto', 'auto', 0, 640, 'fit', 'relative');
+			height: auto;
+		}
 	}
 	.board-content{
 		width: 856px;
 		margin: 70px auto 105px;
+		@media screen and (max-width: #{$screen-xs - 1}) {
+			@include Item(620, 0, 64, 'auto', 'auto', 10, 640, 'fit', 'relative');
+			height: auto;
+		}
+		h2{
+			@media screen and (max-width: #{$screen-xs - 1}) {
+				@include Item(252, 56, 0, 'auto', 'auto', 40, 640, 'fit', 'relative');
+				img{
+					@include SubImgW();
+				}
+			}
+		}
 		.list{
 			height: 255px;
 			overflow: hidden;
         	-webkit-overflow-scrolling: touch;
+			@media screen and (max-width: #{$screen-xs - 1}) {
+				@include Item(620, 28, 0, 'auto', 'auto', 0, 620, 'fit', 'relative');
+				height: auto;
+			}
 		}
 		ul{
 			.summary{
 				width: 260px;
 				padding-left: 0.5em;
+				@media screen and (max-width: #{$screen-xs - 1}) {
+					@include Item(270, 0, 0, 'auto', 'auto', 0, 540, 'fit', 'relative');
+					height: auto;
+				}
 			}
 
 			.cat{
@@ -70,9 +106,17 @@
 				margin: 0;
 				line-height: 1.4em;
 				letter-spacing: 0.2em;
+				@media screen and (max-width: #{$screen-xs - 1}) {
+					letter-spacing: 0.25em;
+					line-height: 1.6em;
+				}
 			}
 			li{
 				position: relative;
+				@media screen and (max-width: #{$screen-xs - 1}) {
+					@include Item(540, 0, 0, 'auto', 'auto', 40, 620, 'fit', 'relative');
+					height: auto;
+				}
 				&:after{
 					display: block;
 					content: '';
