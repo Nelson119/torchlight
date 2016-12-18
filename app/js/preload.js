@@ -95,7 +95,7 @@ app.partial.preload = function(){
 
 	app.imageReload = {
 		init: function(){
-			$(window).on('resize scroll', function(){
+			$(window).on('resize', function(){
 				if($('img[data-src]:visible, figure[data-src]:visible').not('[src],[style]').length && $(window).width() <=768){
 					imageReload(function(){
 						app.dementions.mobile = true;
@@ -105,9 +105,9 @@ app.partial.preload = function(){
 						app.dementions.desktop = true;
 					});
 				}
-				if( $('html.ios').length && window.innerHeight ){
-					$('html, body').height(window.innerHeight);
-				}
+				// if( $('html.ios').length && window.innerHeight ){
+				// 	$('html, body').height(window.innerHeight);
+				// }
 			}).trigger('resize');
 		}
 	};
