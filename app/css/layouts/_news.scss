@@ -91,6 +91,9 @@
 				text-align: center;
 				line-height: 1.4;
 				border-radius: 5px;
+				@media screen and (max-width: #{$screen-xs - 1}) {
+					padding: 0 0.2em 0.2em 0.7em;
+				}
 
 				&.cat1{
 					background-color: #593c24;
@@ -122,6 +125,19 @@
 					content: '';
 					height: 15px;
 					background: url(../img/news/hr.png) left center repeat-x;
+					@media screen and (max-width: #{$screen-xs - 1}) {
+						display: none;
+					}
+
+				}
+				&+li:before{
+					@media screen and (max-width: #{$screen-xs - 1}) {
+						display: block;
+						content: '';
+						height: 3px;
+						background: #422c1b;
+						margin: per(6, 540) 0;
+					}
 				}
 			}
 

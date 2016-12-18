@@ -48,6 +48,11 @@ header {
 					transform: translateY(-10%);
 				}
 			}
+			.gohome{
+				@include Item(150, 70, 5, 'auto', 'auto', -75, 0, 'none', 'absolute');
+				left: 50%;
+				z-index: 15;
+			}
 		}
 		&.nav-show-sub{
 			height: 300px;
@@ -244,7 +249,11 @@ header {
 			display: inline-block;
 			.group{
 				ul{
-					display: none;
+					opacity: 0;
+					position: fixed;
+					width: 100%;
+					width: 100vw;
+					bottom: 0;
 				}
 			}
 		}
@@ -269,7 +278,6 @@ header {
 		z-index: 3;
 		backface-visibility: hidden;
 		transform-origin: center top 1px;
-		z-index: 10;
 		@media screen and (max-width: #{$screen-xs - 1}) {
 			@include Item(230, 70, 5, 'auto', 'auto', 5, 640, 'fit', 'absolute');
 			a{
@@ -283,6 +291,13 @@ header {
 		.tagline{
 			@include Item(147, 39, 19, 'auto', 'auto', 84, 230, 'fit', 'absolute');
 			background: no-repeat center/cover;
+		}
+	}
+	@media screen and (min-width: $screen-sm) {
+		.gohome{
+			@include Item(300, 139, 20, 'auto', 'auto', -150, 0, 'none', 'absolute');
+			left: 50%;
+			z-index: 15;
 		}
 	}
 }
