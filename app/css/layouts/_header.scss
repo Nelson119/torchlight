@@ -188,6 +188,7 @@ header {
 			@media screen and (max-width: #{$screen-xs - 1}) {
 				@include Item(640/5, 128, 0, 'auto', 'auto', 'auto', 640, 'fit', 'relative');
 				display: inline-block;
+				z-index: 5;
 				img{
 					@include SubItem();
 				}
@@ -205,7 +206,9 @@ header {
 			@media screen and (max-width: #{$screen-xs - 1}) {
 				@include Item(640/5, 128, 0, 'auto', 'auto', 'auto', 640, 'fit', 'relative');
 				display: inline-block;
+				z-index: 5;
 				>a{
+					z-index: 6;
 					@include SubItem();
 					img{
 						@include SubItem();
@@ -254,6 +257,24 @@ header {
 					width: 100%;
 					width: 100vw;
 					bottom: 0;
+					left: 0;
+					height: 0;
+					transition-duration: 0.35s;
+					z-index: -1;
+				}
+
+				a:hover, a:focus{
+					&+ul{
+						z-index: 4;
+						opacity: 1;
+						height: auto;
+						margin-bottom: per(640/5,640);
+						background: rgba(0,0,0, 0.6);
+						li{
+							padding: 1em 0;
+						}
+					}
+
 				}
 			}
 		}

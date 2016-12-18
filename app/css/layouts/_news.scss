@@ -75,6 +75,9 @@
 			}
 		}
 		ul{
+			@media screen and (max-width: #{$screen-xs - 1}) {
+				padding-bottom: per(80, 630);
+			}
 			.summary{
 				width: 260px;
 				padding-left: 0.5em;
