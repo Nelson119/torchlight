@@ -21,39 +21,16 @@ app.partial.share = function(){
 			href = encodeURIComponent(href || location.href + '?utm_source=email&utm_medium=fbshare_m&utm_campaign=roseanni');
 			title = encodeURIComponent(title || document.title);
 			var body = encodeURIComponent(''+href+' #' +title+'');
-			window.open('https://mail.google.com/mail/?view=cm&fs=1&to=&su=與你分享:'+title+'&body='+body+'&bcc=');
+			var to = 'service@torchlight.tw';
+			var su = '我有問題:';
+			if($('html.ios').length){
+				location.href = 'mailto:' + to + '&subject=' + encodeURIComponent(su);
+			}else{
+				window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+to+'&su='+su+':&bcc=');
+			}
+
 		}
 	};
-	$(window).trigger('resize');
-	//分享按鈕
-
-	$('.share .facebook').on('click', function(e){
-		share.facebook();
-
-		e.stopPropagation();
-
-		e.preventDefault();
-
-		return false;
-	});
-
-	$('.share .googleplus').on('click', function(e){
-		share.googleplus();
-
-		e.stopPropagation();
-
-		e.preventDefault();
-
-		return false;
-	});
-
-	$('.share .email').on('click', function(e){
-		share.email();
-
-		e.stopPropagation();
-
-		e.preventDefault();
-
-		return false;
-	});
+	
+	app.share = share;
 };

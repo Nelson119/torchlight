@@ -109,7 +109,7 @@ header {
 			@include Item(640, 0, 'auto', 'auto', 128, 0, 640, 'fit', 'fixed');
 			position: fixed!important;
 			bottom: 0;
-			letter-spacing: -1em;
+			letter-spacing: -0.2607em;
 		}
 		>a,>aside{
 			@media screen and (min-width: #{$screen-md-num + 80}px) {
@@ -162,7 +162,6 @@ header {
 					margin-right: -500px;
 				}
 			}
-
 		}
 		>a,>aside >a{
 			@media screen and (min-width: $screen-sm) {
@@ -186,6 +185,10 @@ header {
 			}
 		}
 		>a{
+			&.active{
+				pointer-events: none;
+				cursor: default;
+			}
 			@media screen and (max-width: #{$screen-xs - 1}) {
 				@include Item(640/5, 128, 0, 'auto', 'auto', 'auto', 640, 'fit', 'relative');
 				display: inline-block;
@@ -217,14 +220,6 @@ header {
 				}
 			}
 		}
-		// >aside{
-		// 	&.group-show-sub{
-		// 		a:after{
-		// 			opacity: 1;
-
-		// 		}
-		// 	}
-		// }
 
 		@media screen and (min-width: $screen-sm) {
 			.group{
@@ -264,7 +259,7 @@ header {
 					z-index: -1;
 				}
 
-				a:hover, a:focus{
+				a:hover, a:focus, a.mousemoving{
 					&+ul{
 						z-index: 4;
 						opacity: 1;

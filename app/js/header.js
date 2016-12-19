@@ -26,6 +26,34 @@ app.partial.header = function(){
 		}, navShowSubTimeout * 1000);
 	});
 
+	
+	var mousemovingTimeout = 0.25;
+
+	var mousemovingTimeoutTick = 0;
+
+	// $('html.desktop header nav >aside >a').on('mousemove', function(e){
+	// 	var a = $(this).addClass('mousemoving');
+	// 	clearTimeout(mousemovingTimeoutTick);
+
+	// 	$(this).parent().one('mousemove', function(e){
+	// 		clearTimeout(mousemovingTimeoutTick);
+	// 		mousemovingTimeoutTick = setTimeout(function(){
+	// 			a.removeClass('mousemoving');
+	// 		}, mousemovingTimeout * 1000);
+	// 	}).one('mouseout', function(e){
+	// 		clearTimeout(mousemovingTimeoutTick);
+	// 		mousemovingTimeoutTick = setTimeout(function(){
+	// 			a.removeClass('mousemoving');
+	// 		}, mousemovingTimeout * 1000);
+	// 	});
+	// }).on('mouseout', function(e){
+	// 	clearTimeout(mousemovingTimeoutTick);
+	// 	mousemovingTimeoutTick = setTimeout(function(){
+	// 		$(this).removeClass('mousemoving');
+	// 	}, mousemovingTimeout * 1000);
+	// });
+
+
 	$(window).on('scroll', function(){
 		var scrollTop = $(window).scrollTop();
 		if(scrollTop > 30){
