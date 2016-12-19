@@ -198,15 +198,6 @@ body{
 	}
 }
 
-html.ios{
-	body{
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		overflow: hidden;
-	}
-}
 
 @media screen and (min-width: $screen-sm) {
 	body{
@@ -224,6 +215,15 @@ html.ios{
 	}
 }
 @media screen and (max-width: #{$screen-xs - 1}) {
+	html.ios{
+		body{
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+		}
+	}
 	html, body, .background, header, header nav,.app.content{
 		min-width: 320px;
 		min-width: 100%;
