@@ -218,6 +218,7 @@ body{
 
 			.board-common{
 				@media screen and (min-width: $screen-sm) {
+					width: 100%;
 					article{
 						overflow: auto;
 						-webkit-overflow-scrolling: touch;
