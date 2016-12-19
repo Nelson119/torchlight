@@ -56,6 +56,10 @@
 		@media screen and (max-width: #{$screen-xs - 1}) {
 			@include Item(620, 0, 64, 'auto', 'auto', 10, 640, 'fit', 'relative');
 			height: auto;
+
+			.row{
+				margin: 0 per(-10, 620);
+			}
 		}
 		h2{
 			@media screen and (max-width: #{$screen-xs - 1}) {
