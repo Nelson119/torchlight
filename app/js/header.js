@@ -31,14 +31,17 @@ app.partial.header = function(){
 
 	var mousemovingTimeoutTick = 0;
 
-	$('header nav >aside >a').hammer().on('tap', function(e){
+	$('header nav >aside >a').hammer().on('touchend', function(e){
 		var a = $(this).addClass('mousemoving');
 		$('.mousemoving').not(a).removeClass('mousemoving');
-		console.log(e);
 		e.stopPropagation();
 		e.preventDefault();
+		return false;
 	});
-	$('body').hammer().on('tap', function(e){
+	$('header nav >aside ul a').on('touchend', function(e){
+		location.href = this.href;
+	});
+	$('body').on('touchend', function(e){
 		$('.mousemoving').removeClass('mousemoving');
 	});
 

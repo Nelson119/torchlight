@@ -40,6 +40,13 @@ app.partial.preload = function(){
 				elements.push(ele);
 			}
 		});
+		var nav = $('header nav img').not('[src],[style]');
+		nav.each(function(idx, ele){
+			if($(ele).attr('data-src')){
+				imagePreload[$(ele).attr('data-src')] = false;
+				elements.push(ele);
+			}
+		});
 		// if(!app.dementions.mobile && $(window).width() <=768){
 		// 	var dementionMobile = $('img[data-src].visible-xs, figure[data-src].visible-xs').not('[src],[style]');
 		// 	dementionMobile.each(function(idx, ele){
