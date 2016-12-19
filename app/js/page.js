@@ -1,4 +1,4 @@
-console.clear();
+// console.clear();
 
 var github = /nelson.works/.test(location.href);
 

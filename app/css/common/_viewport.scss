@@ -154,6 +154,10 @@ body{
 
 		@media screen and (max-width: #{$screen-xs - 1}) {
 
+			padding-top: 1px;
+			margin-top: -1px;
+			min-height: 360px;
+			min-height: calc(100vh - 49.375vw - 20vw - 12.5vw);
 			.background{
 				@include Item(640, 0, 0, 'auto', 'auto', 0, 640, 'fit', 'absolute');
 				background-repeat: no-repeat;

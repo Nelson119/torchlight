@@ -29,10 +29,12 @@ $(function(){
 
 	//ios menu position
 	$(window).on('scroll resize', function(e){
-		if($('html.ios').length){
+		if($('html.ios').length && $(window).width() <= 768){
 			// console.log(e);
 			var t = window.innerHeight - window.innerWidth / 5;
 			$('header nav').css('top', t);
+		}else{
+			$('header nav').removeAttr('style');
 		}
 	});
 

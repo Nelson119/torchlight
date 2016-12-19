@@ -31,27 +31,16 @@ app.partial.header = function(){
 
 	var mousemovingTimeoutTick = 0;
 
-	// $('html.desktop header nav >aside >a').on('mousemove', function(e){
-	// 	var a = $(this).addClass('mousemoving');
-	// 	clearTimeout(mousemovingTimeoutTick);
-
-	// 	$(this).parent().one('mousemove', function(e){
-	// 		clearTimeout(mousemovingTimeoutTick);
-	// 		mousemovingTimeoutTick = setTimeout(function(){
-	// 			a.removeClass('mousemoving');
-	// 		}, mousemovingTimeout * 1000);
-	// 	}).one('mouseout', function(e){
-	// 		clearTimeout(mousemovingTimeoutTick);
-	// 		mousemovingTimeoutTick = setTimeout(function(){
-	// 			a.removeClass('mousemoving');
-	// 		}, mousemovingTimeout * 1000);
-	// 	});
-	// }).on('mouseout', function(e){
-	// 	clearTimeout(mousemovingTimeoutTick);
-	// 	mousemovingTimeoutTick = setTimeout(function(){
-	// 		$(this).removeClass('mousemoving');
-	// 	}, mousemovingTimeout * 1000);
-	// });
+	$('header nav >aside >a').on('click', function(e){
+		var a = $(this).addClass('mousemoving');
+		$('.mousemoving').not(a).removeClass('mousemoving');
+		console.log(e);
+		e.stopPropagation();
+		e.preventDefault();
+	});
+	$('body').on('click', function(e){
+		$('.mousemoving').removeClass('mousemoving');
+	});
 
 
 	$(window).on('scroll', function(){
