@@ -85,6 +85,7 @@
 			.summary{
 				width: 260px;
 				padding-left: 0.5em;
+				white-space: normal;
 				@media screen and (max-width: #{$screen-xs - 1}) {
 					@include Item(250, 0, 0, 'auto', 'auto', 0, 540, 'fit', 'relative');
 					height: auto;

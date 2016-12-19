@@ -39,7 +39,11 @@ app.partial.header = function(){
 		return false;
 	});
 	$('header nav >aside ul a').on('touchend', function(e){
-		location.href = this.href;
+		if($(this).attr('target')){
+			window.open(this.href);
+		}else{
+			location.href = this.href;	
+		}
 	});
 	$('body').on('touchend', function(e){
 		$('.mousemoving').removeClass('mousemoving');
