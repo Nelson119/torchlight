@@ -202,11 +202,6 @@ html.ios{
 		top: 0;
 		left: 0;
 		overflow: hidden;
-		.ios-body{
-			height: 100%;
-			overflow-y: auto;
-			-webkit-overflow-scrolling: touch;
-		}
 	}
 }
 
@@ -230,6 +225,11 @@ html.ios{
 		min-width: 320px;
 		min-width: 100%;
 		min-width: 100vw;
+	}
+	.ios-body{
+		height: 100%;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 	[role="main"]{
 		margin-bottom: per(128, 640);
