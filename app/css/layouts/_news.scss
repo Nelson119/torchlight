@@ -155,3 +155,17 @@
 	}
 
 }
+
+html.ios{
+	body{
+
+		.board-content{
+			@media screen and (min-width: $screen-sm) {
+				.list{
+					overflow: auto;
+					-webkit-overflow-scrolling: touch;
+				}
+			}
+		}
+	}
+}

@@ -213,6 +213,19 @@ body{
 			margin-top: -1px;
 		}
 	}
+	html.ios{
+		body{
+
+			.board-common{
+				@media screen and (min-width: $screen-sm) {
+					article{
+						overflow: auto;
+						-webkit-overflow-scrolling: touch;
+					}
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: #{$screen-xs - 1}) {
 	html.ios{
@@ -222,6 +235,7 @@ body{
 			top: 0;
 			left: 0;
 			overflow: hidden;
+
 		}
 	}
 	html, body, .background, header, header nav,.app.content{
