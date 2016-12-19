@@ -183,6 +183,21 @@ body{
 		}
 	}
 }
+
+html.ios{
+	body{
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		.ios-body{
+			height: 100%;
+			overflow-y: auto;
+		}
+	}
+}
+
 @media screen and (min-width: $screen-sm) {
 	body{
 		padding-top: 1px;
