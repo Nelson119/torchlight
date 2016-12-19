@@ -21,10 +21,20 @@ app.rootPath = app.github ? 'http://nelson.works/torchlight/' : 'http://localhos
 
 
 $(function(){
+    
     // 定義每個section
 	$.each(app.partial, function(name, init){
 		init();
     });
+
+	//ios menu position
+	$(window).on('scroll resize', function(e){
+		if($('html.ios').length){
+			// console.log(e);
+			var t = window.innerHeight - window.innerWidth / 5;
+			$('header nav').css('top', t);
+		}
+	});
 
 	//預載圖片
     app.imageReload.init();
