@@ -31,14 +31,14 @@ app.partial.header = function(){
 
 	var mousemovingTimeoutTick = 0;
 
-	$('header nav >aside >a').on('click', function(e){
+	$('header nav >aside >a').hammer().on('tap', function(e){
 		var a = $(this).addClass('mousemoving');
 		$('.mousemoving').not(a).removeClass('mousemoving');
 		console.log(e);
 		e.stopPropagation();
 		e.preventDefault();
 	});
-	$('body').on('click', function(e){
+	$('body').hammer().on('tap', function(e){
 		$('.mousemoving').removeClass('mousemoving');
 	});
 
