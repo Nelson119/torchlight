@@ -86,7 +86,7 @@
 				width: 260px;
 				padding-left: 0.5em;
 				@media screen and (max-width: #{$screen-xs - 1}) {
-					@include Item(270, 0, 0, 'auto', 'auto', 0, 540, 'fit', 'relative');
+					@include Item(250, 0, 0, 'auto', 'auto', 0, 540, 'fit', 'relative');
 					height: auto;
 				}
 			}
@@ -117,7 +117,7 @@
 				line-height: 1.4em;
 				letter-spacing: 0.2em;
 				@media screen and (max-width: #{$screen-xs - 1}) {
-					letter-spacing: 0.25em;
+					letter-spacing: 0.22em;
 					line-height: 1.6em;
 				}
 			}
