@@ -228,6 +228,8 @@ html.ios{
 @media screen and (max-width: #{$screen-xs - 1}) {
 	html, body, .background, header, header nav,.app.content{
 		min-width: 320px;
+		min-width: 100%;
+		min-width: 100vw;
 	}
 	[role="main"]{
 		margin-bottom: per(128, 640);
