@@ -65,6 +65,7 @@
 
 			
 			@media screen and (min-width: #{$screen-xs}) {
+				position: relative;
 				height: 33px;
 			}
 			@media screen and (max-width: #{$screen-xs - 1}) {
