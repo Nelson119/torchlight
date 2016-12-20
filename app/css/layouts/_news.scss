@@ -62,6 +62,11 @@
 			}
 		}
 		h2{
+
+			
+			@media screen and (min-width: #{$screen-xs}) {
+				height: 33px;
+			}
 			@media screen and (max-width: #{$screen-xs - 1}) {
 				@include Item(252, 56, 0, 'auto', 'auto', 40, 640, 'fit', 'relative');
 				img{
