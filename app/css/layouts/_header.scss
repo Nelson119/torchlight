@@ -113,25 +113,26 @@ header {
 		>a,>aside{
 			@media screen and (min-width: #{$screen-md-num + 80}px) {
 				&:nth-child(1){
-					margin-left: -560px;
-				}
-				&:nth-child(2){
+					// margin-left: -560px;
 					margin-left: -525px;
 				}
-				&:nth-child(3){
+				&:nth-child(2){
 					margin-left: -395px;
 				}
-				&:nth-child(4){
+				&:nth-child(3){
 					margin-left: -265px;
 				}
-				&:nth-child(5){
+				&:nth-child(4){
 					margin-right: -265px;
 				}
-				&:nth-child(6){
+				&:nth-child(5){
 					margin-right: -395px;
 				}
-				&:nth-child(7){
+				&:nth-child(6){
 					margin-right: -525px;
+				}
+				&:nth-child(7){
+					display: none;
 				}
 			}
 			@media screen and (min-width: $screen-sm) {
@@ -139,32 +140,33 @@ header {
 				display: block;
 				margin-top: 40px;
 				z-index: 1;
-				&:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4){
+				&:nth-child(1),&:nth-child(2),&:nth-child(3){
 					left: 50%;
 				}
-				&:nth-child(5),&:nth-child(6),&:nth-child(7){
+				&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
 					right: 50%;
 				}
 				&:nth-child(1){
-					margin-left: -625px;
-				}
-				&:nth-child(2){
+					// margin-left: -625px;
 					margin-left: -500px;
 				}
-				&:nth-child(3){
+				&:nth-child(2){
 					margin-left: -375px;
 				}
-				&:nth-child(4){
+				&:nth-child(3){
 					margin-left: -245px;
 				}
-				&:nth-child(5){
+				&:nth-child(4){
 					margin-right: -245px;
 				}
-				&:nth-child(6){
+				&:nth-child(5){
 					margin-right: -375px;
 				}
-				&:nth-child(7){
+				&:nth-child(6){
 					margin-right: -500px;
+				}
+				&:nth-child(7){
+					display: none;
 				}
 			}
 			@media screen and (max-width: #{$screen-xs - 1}) {
