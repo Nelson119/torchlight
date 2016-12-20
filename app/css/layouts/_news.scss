@@ -81,6 +81,7 @@
 		ul{
 			@media screen and (max-width: #{$screen-xs - 1}) {
 				padding-bottom: per(80, 630);
+				letter-spacing: -0.25em;
 			}
 			.summary{
 				width: 260px;
@@ -150,7 +151,10 @@
 				}
 			}
 
-			.date{
+			.date{			
+				@media screen and (max-width: #{$screen-xs - 1}) {
+					letter-spacing: 0.1em;
+				}	
 				vertical-align: bottom;
 			}
 		}
