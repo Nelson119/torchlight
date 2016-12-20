@@ -31,21 +31,21 @@ app.partial.header = function(){
 
 	var mousemovingTimeoutTick = 0;
 
-	$('header nav >aside >a').hammer().on('touchend', function(e){
+	$('html.mobile header nav >aside >a').hammer().on('touchend', function(e){
 		var a = $(this).addClass('mousemoving');
 		$('.mousemoving').not(a).removeClass('mousemoving');
 		e.stopPropagation();
 		e.preventDefault();
 		return false;
 	});
-	$('header nav >aside ul a').on('touchend', function(e){
+	$('html.mobile header nav >aside ul a').on('touchend', function(e){
 		if($(this).attr('target')){
 			window.open(this.href);
 		}else{
 			location.href = this.href;	
 		}
 	});
-	$('body').on('touchend', function(e){
+	$('html.mobile body').on('touchend', function(e){
 		$('.mousemoving').removeClass('mousemoving');
 	});
 
