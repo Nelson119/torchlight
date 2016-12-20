@@ -44,7 +44,7 @@ header {
 				transform: translateY(-15%);
 			}
 			&.nav-show-sub {
-				height: 255px;
+				height: 295px;
 				.group ul{
 					transform: translateY(-10%);
 				}
@@ -56,12 +56,12 @@ header {
 			}
 		}
 		&.nav-show-sub{
-			height: 300px;
+			height: 355px;
 			transition: 0s height linear 0s;
 			&:before{
 				top: 110px;
 				opacity: 1;
-				height: 195px;
+				height: 245px;
 				transition: 0.25s opacity linear 0s,  0s height linear 0s;
 			}
 			.group{
@@ -70,7 +70,7 @@ header {
 					padding: 40px 0 0;
 					transform: none;
 					opacity: 1;
-					height: 195px;
+					height: 245px;
 					transition: 0.6s opacity linear 0s, 0.6s transform linear 0s,  0s height linear 0s,  0s padding linear 0s;
 					li{
 						&+li{
@@ -113,21 +113,24 @@ header {
 		>a,>aside{
 			@media screen and (min-width: #{$screen-md-num + 80}px) {
 				&:nth-child(1){
-					margin-left: -525px;
+					margin-left: -560px;
 				}
 				&:nth-child(2){
-					margin-left: -395px;
+					margin-left: -525px;
 				}
 				&:nth-child(3){
-					margin-left: -265px;
+					margin-left: -395px;
 				}
 				&:nth-child(4){
-					margin-right: -265px;
+					margin-left: -265px;
 				}
 				&:nth-child(5){
-					margin-right: -395px;
+					margin-right: -265px;
 				}
 				&:nth-child(6){
+					margin-right: -395px;
+				}
+				&:nth-child(7){
 					margin-right: -525px;
 				}
 			}
@@ -136,28 +139,31 @@ header {
 				display: block;
 				margin-top: 40px;
 				z-index: 1;
-				&:nth-child(1),&:nth-child(2),&:nth-child(3){
+				&:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4){
 					left: 50%;
 				}
-				&:nth-child(4),&:nth-child(5),&:nth-child(6){
+				&:nth-child(5),&:nth-child(6),&:nth-child(7){
 					right: 50%;
 				}
 				&:nth-child(1){
-					margin-left: -500px;
+					margin-left: -625px;
 				}
 				&:nth-child(2){
-					margin-left: -375px;
+					margin-left: -500px;
 				}
 				&:nth-child(3){
-					margin-left: -245px;
+					margin-left: -375px;
 				}
 				&:nth-child(4){
-					margin-right: -245px;
+					margin-left: -245px;
 				}
 				&:nth-child(5){
-					margin-right: -375px;
+					margin-right: -245px;
 				}
 				&:nth-child(6){
+					margin-right: -375px;
+				}
+				&:nth-child(7){
 					margin-right: -500px;
 				}
 			}
